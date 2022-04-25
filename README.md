@@ -8,12 +8,14 @@
 
 * 事件总线 event-bus
 
-* instanceof 运算符 instanceof-operator
+* instanceof 运算符，instanceof-operator
 
-* new 运算符 new-operator
+* new 运算符，new-operator
 
 * call
 
 * apply
 
 * bind
+
+* Object.create，object-create
