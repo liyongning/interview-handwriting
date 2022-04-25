@@ -5,3 +5,5 @@
 * 节流 throttle
 
 * 深拷贝 deep-copy
+
+* 事件总线 event-bus
