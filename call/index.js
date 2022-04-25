@@ -4,6 +4,7 @@
  * 
  * @param { Object } ctx 指定的函数执行上下文
  * @param  { Array } args 剩余参数组成的数组 
+ * @returns any，返回函数的执行结果
  */
 Function.prototype.myCall = function (ctx, ...args) {
     // 示例
@@ -14,7 +15,9 @@ Function.prototype.myCall = function (ctx, ...args) {
     // 将执行函数设置到指定的上下文对象上
     ctx.fn = fn
     // 执行函数
-    ctx.fn(...args)
+    const res = ctx.fn(...args)
     // 删除上下文上的 fn 方法
     delete ctx.fn
+    // 返回函数的执行结果
+    return res
 }

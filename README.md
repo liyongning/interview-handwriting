@@ -15,3 +15,5 @@
 * call
 
 * apply
+
+* bind
