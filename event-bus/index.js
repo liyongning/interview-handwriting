@@ -7,12 +7,14 @@ function EventBus() {
     this.events = {}
 }
 
+module.exports = EventBus
+
 /**
  * 监听事件 
  * @param { String } eventName 事件名
  * @param { Function | Array<Function> } cb 事件处理函数
  */
-EventBus.prototype.$on = function(eventName, cb) {
+EventBus.prototype.$on = function (eventName, cb) {
     if (!Array.isArray(cb)) {
         cb = [cb]
     }
@@ -20,7 +22,7 @@ EventBus.prototype.$on = function(eventName, cb) {
     this.events[eventName] = (this.events[eventName] || []).concat(cb)
 }
 
-EventBus.prototype.$emit = function(eventName, ...args) {
+EventBus.prototype.$emit = function (eventName, ...args) {
     this.events[eventName].forEach(fn => {
         fn.apply(this, args)
     })

@@ -4,7 +4,7 @@
  * @param { any } src 原数据
  * @returns 返回拷贝后的数据
  */
-function deepCopy(src, cache = new WeakMap()) {
+module.exports = function deepCopy(src, cache = new WeakMap()) {
 	// 拷贝原始值，直接返回原始值本身
 	if (isPrimitiveType(src)) return src
 
