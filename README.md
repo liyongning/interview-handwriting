@@ -19,3 +19,5 @@
 * bind
 
 * Object.create，object-create
+
+* 继承，inherit
