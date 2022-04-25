@@ -11,3 +11,7 @@
 * instanceof 运算符 instanceof-operator
 
 * new 运算符 new-operator
+
+* call
+
+* apply
