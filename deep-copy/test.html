@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="./index.js"></script>
+    <script>
+        // 包含特殊属性的对象
+        const obj = {
+            [Symbol()]: 'symbol value',
+            fn: function fn(arg1, arg2) { return arg1 + arg2 },
+            arr: [1, 2, { key: 'value' }],
+            map: new Map([['k1', 'v1'], ['k2', 'v2']]),
+            key: 'value'
+        }
+        // 构建循环引用
+        obj.obj = obj
+        console.log('original object = ', obj)
+
+        // 深拷贝
+        const copy = deepCopy(obj)
+        console.log('copy obj = ', copy)
+
+        window.obj = obj
+        window.copy = obj
+    </script>
+</body>
+
+</html>
