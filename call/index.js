@@ -1,0 +1,20 @@
+/**
+ * 为函数绑定执行上下文
+ *  原理：将函数设置为执行上下文的一个方法，然后调用执行上下文上的方法
+ * 
+ * @param { Object } ctx 指定的函数执行上下文
+ * @param  { Array } args 剩余参数组成的数组 
+ */
+Function.prototype.myCall = function (ctx, ...args) {
+    // 示例
+    // fn.myCall(ctx, arg1, arg2)
+
+    // 这里的 this 是正在执行的函数
+    const fn = this
+    // 将执行函数设置到指定的上下文对象上
+    ctx.fn = fn
+    // 执行函数
+    ctx.fn(...args)
+    // 删除上下文上的 fn 方法
+    delete ctx.fn
+}
