@@ -1,5 +1,5 @@
 /**
- * instanceof
+ * instanceof 运算符
  *  定义：判断对象是否属于某个构造函数的实例
  *  原理：判断构造函数的原型对象是否出现在对象的原型链上
  * @returns Boolean

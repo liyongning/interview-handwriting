@@ -7,3 +7,7 @@
 * 深拷贝 deep-copy
 
 * 事件总线 event-bus
+
+* instanceof 运算符 instanceof-operator
+
+* new 运算符 new-operator
