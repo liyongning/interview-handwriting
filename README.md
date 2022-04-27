@@ -23,3 +23,5 @@
 * 继承，inherit
 
 * 手写 Promise
+
+* async await
