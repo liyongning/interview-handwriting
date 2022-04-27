@@ -8,9 +8,9 @@
 
 * 事件总线 event-bus
 
-* instanceof 运算符，instanceof-operator
+* instanceof 运算符
 
-* new 运算符，new-operator
+* new 运算符
 
 * call
 
@@ -18,6 +18,8 @@
 
 * bind
 
-* Object.create，object-create
+* Object.create
 
 * 继承，inherit
+
+* 手写 Promise
