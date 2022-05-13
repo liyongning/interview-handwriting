@@ -25,3 +25,5 @@
 * 手写 Promise
 
 * async await
+
+* 并发请求 concurrent-request
