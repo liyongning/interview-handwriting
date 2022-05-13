@@ -12,12 +12,14 @@ Function.prototype.myCall = function (ctx, ...args) {
 
     // 这里的 this 是正在执行的函数
     const fn = this
+    // 保证 ctx[key] 的唯一性，避免和用户设置的 context[key] 冲突
+    const key = Symbol()
     // 将执行函数设置到指定的上下文对象上
-    ctx.fn = fn
+    ctx[key] = fn
     // 执行函数
-    const res = ctx.fn(...args)
+    const res = ctx[key](...args)
     // 删除上下文上的 fn 方法
-    delete ctx.fn
+    delete ctx[key]
     // 返回函数的执行结果
     return res
 }

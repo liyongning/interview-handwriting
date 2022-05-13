@@ -11,12 +11,14 @@ Function.prototype.myBind = function (ctx, ...args) {
 
     // 这里的 this 是正在执行的函数
     const fn = this
+    // 保证 ctx[key] 的唯一性，避免和用户设置的 context[key] 冲突
+    const key = Symbol()
     // 将执行函数设置到指定的上下文对象上
-    ctx.fn = fn
+    ctx[key] = fn
     // 返回一个可执行函数，这里和 apply、call 不一样，但绑定上下文的方式是一样的
     // bind 方法支持预设一部分参数，剩下的参数通过返回的函数设置，具有柯里化的作用
     return function(...otherArgs) {
         // 执行函数
-        return ctx.fn(...args, ...otherArgs)
+        return ctx[key](...args, ...otherArgs)
     }
 }
